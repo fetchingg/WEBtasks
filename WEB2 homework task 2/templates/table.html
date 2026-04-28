@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Оформление каюты</h2>
+
+<table border="1">
+    <tr>
+        <td>Цвет стен</td>
+        <td>Картинка</td>
+    </tr>
+    <tr>
+        <td>
+            <img src="{{ url_for('static', filename=img_color) }}" width="200">
+        </td>
+        <td>
+            <img src="{{ url_for('static', filename=img) }}" width="200">
+        </td>
+    </tr>
+</table>
+
+{% endblock %}
