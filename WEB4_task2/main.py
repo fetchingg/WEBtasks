@@ -1,3 +1,5 @@
+#не очень поняла что от меня в итоге надо но вроде тут все есть... вон там новости выводятся с классной работы....
+
 from flask import Flask, render_template, redirect, abort, request
 from flask_login import LoginManager, login_user, login_required, logout_user, current_user
 import datetime
