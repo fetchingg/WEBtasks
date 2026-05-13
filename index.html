@@ -1,0 +1,83 @@
+<!-- templates/index.html -->
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container">
+
+    <!-- TITLE -->
+    <h1 class="hero-title">
+        Афиша событий в {{city_changed}}
+    </h1>
+<!-- даты -->
+    <div class="calendar-container mb-5">
+        <div id="calendar"></div>
+    </div>
+
+    <form method="GET" class="d-flex gap-2">
+
+        <div class="position-relative">
+
+            <i class="bi bi-geo-alt-fill position-absolute"
+               style="left:15px; top:12px; color:#666;"></i>
+
+            <input type="text"
+                   name="city"
+                   value="{{ city }}"
+                   class="form-control ps-5 filter-btn"
+                   placeholder="Введите город">
+
+        </div>
+
+        <button class="filter-btn">
+            Выбрать
+        </button>
+
+    </form>
+    <!-- EVENT TYPE -->
+    <div class="dropdown">
+
+        <button class="filter-btn dropdown-toggle"
+                data-bs-toggle="dropdown">
+
+            {{ event_type }}
+
+        </button>
+
+        <ul class="dropdown-menu">
+
+            <li>
+                <a class="dropdown-item"
+                   href="/?city={{ city }}&type=Концерты">
+                    Концерты
+                </a>
+            </li>
+
+            <li>
+                <a class="dropdown-item"
+                   href="/?city={{ city }}&type=Театр">
+                    Театр
+                </a>
+            </li>
+
+            <li>
+                <a class="dropdown-item"
+                   href="/?city={{ city }}&type=Кино">
+                    Кино
+                </a>
+            </li>
+
+            <li>
+                <a class="dropdown-item"
+                   href="/?city={{ city }}&type=Стендап">
+                    Стендап
+                </a>
+            </li>
+
+        </ul>
+
+    </div>
+
+</div>
+
+{% endblock %}
